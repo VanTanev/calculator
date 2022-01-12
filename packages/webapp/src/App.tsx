@@ -1,25 +1,17 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import Calculator from 'components/Calculator'
+import { XStateInspectLoader } from 'xstate-helpers/react/XStateInspectLoader'
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <XStateInspectLoader options={{ url: 'https://stately.ai/viz?inspect', iframe: false }}>
+            <div className="p-5">
+                <span className="text-2xl">Calculator</span>
+            </div>
+
+            <div className="m-5">
+                <Calculator />
+            </div>
+        </XStateInspectLoader>
     )
 }
 
